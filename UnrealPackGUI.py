@@ -1,13 +1,13 @@
 # DanO tool for easy packaging and unpackaging uassets to upack files with UnrealPak
 
-import Tkinter as tkinter
-from tkFileDialog import askopenfilename
-from tkFileDialog import askdirectory
-import ttk
+import tkinter as tkinter
+from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askdirectory
+from tkinter import ttk
 import subprocess
 import os
 
-unrealPakDIR = r'"' + "C:\Program Files\Epic Games\UE_4.20\Engine\Binaries\Win64\UnrealPak.exe" + '"'
+unrealPakDIR = r'"' + r"C:\Program Files\Epic Games\UE_4.20\Engine\Binaries\Win64\UnrealPak.exe" + r'"'
 Path_PackInputDir = r"Choose your input directory"
 Path_PackOutputDIR = r"Alternatively, choose a text doc defining all assets"
 Path_UnpackInputDir = r"Choose your output directory"
@@ -66,7 +66,7 @@ def PackBtn():
 	filename = "/" + txt_pack_name.get() + ".upack"
 	x = unrealPakDIR + " " + Path_PackOutputDIR + filename + " -create=" + Path_PackInputDir
 	subprocess.call(x, shell=True)
-	print x
+	print (x)
 
 def PackNotepadBtn():
 	filename = txt_pack_name.get() + ".upack"
@@ -86,7 +86,7 @@ def unpackToBtn():
 def unpackBtn():
 	x = unrealPakDIR + " " + Path_UnpackInputDir + " -Extract " + Path_UnpackOutputDir
 	subprocess.call(x, shell=False)
-	print x
+	print (x)
 	
 
 def toolPathBtn():
